@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">18.189.97.50</domain>
+        <domain includeSubdomains="true">maps.googleapis.com</domain>
+        <domain includeSubdomains="true">18.190.34.124</domain>
+        <domain includeSubdomains="true">api.driverdoc.io</domain>
+        <domain includeSubdomains="true">api-uat.driverdoc.io</domain>
+        <domain includeSubdomains="true">master-api.driverdoc.io</domain>
+    </domain-config>
+</network-security-config>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<network-security-config>-->
+    <!--<domain-config>-->
+    <!--<domain includeSubdomains="true">j.ginggong.com</domain>-->
+    <!--</domain-config>-->
+    <!--</network-security-config>-->

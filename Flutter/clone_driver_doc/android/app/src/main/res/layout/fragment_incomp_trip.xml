@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33BEAD">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/margin8"
+                android:layout_marginTop="@dimen/margin32"
+                android:background="@drawable/bg_grey_circle_select"
+                android:padding="@dimen/margin10"
+                app:srcCompat="@drawable/ic_back" />
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin32"
+                android:gravity="center"
+                android:text="Incomplete Trips"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16sp" />
+        </RelativeLayout>
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+            android:id="@+id/tv_no_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin24"
+            android:text="No Trip"
+            android:textColor="@color/black_505"
+            android:textSize="@dimen/size16sp"
+            android:visibility="gone" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title"
+            android:layout_marginTop="@dimen/margin32">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layoutAnimation="@anim/layout_animation_fall_down"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+</layout>

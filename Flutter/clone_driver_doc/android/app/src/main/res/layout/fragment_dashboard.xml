@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin38">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/margin8"
+                android:background="@drawable/bg_grey_circle_select"
+                android:padding="@dimen/margin10"
+                app:srcCompat="@drawable/ic_close_2" />
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Dashboard"
+                android:textColor="@color/black_505"
+                android:textSize="@dimen/size16sp" />
+        </RelativeLayout>
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+            android:id="@+id/trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin32"
+            android:text="TRIPS"
+            android:textColor="@color/black_505"
+            android:textSize="@dimen/size18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ln1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trip"
+            android:layout_marginTop="@dimen/margin20"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
+
+            <com.blure.complexview.ComplexView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                app:radius="12dp"
+                app:shadow="true"
+                app:shadowColor="#E0E0E0"
+                app:shadowSpread="1">
+
+                <com.blure.complexview.ComplexView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:color="#FFFFFF"
+                    app:radius="12dp">
+
+                    <RelativeLayout
+                        android:id="@+id/btn_schedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="13dp">
+
+                        <RelativeLayout
+                            android:id="@+id/rl1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="@dimen/margin51"
+                            android:layout_marginTop="@dimen/margin13"
+                            android:layout_marginRight="@dimen/margin51"
+                            android:background="@drawable/bg_black_8dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:srcCompat="@drawable/ic_place_white_24dp" />
+
+                        </RelativeLayout>
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rl1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin10"
+                            android:text="Scheduled Trips" />
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:id="@+id/tv_count_shedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="86dp"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:background="@drawable/bg_view_new"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size12sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </com.blure.complexview.ComplexView>
+            </com.blure.complexview.ComplexView>
+
+            <com.blure.complexview.ComplexView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin35"
+                android:layout_marginBottom="2dp"
+                app:radius="12dp"
+                app:shadow="true"
+                app:shadowColor="#E0E0E0"
+                app:shadowSpread="1">
+
+                <com.blure.complexview.ComplexView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:color="#FFFFFF"
+                    app:radius="12dp">
+
+                    <RelativeLayout
+                        android:id="@+id/btn_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="13dp">
+
+                        <RelativeLayout
+                            android:id="@+id/rl2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="@dimen/margin51"
+                            android:layout_marginTop="@dimen/margin13"
+                            android:layout_marginRight="@dimen/margin51"
+                            android:background="@drawable/bg_black_8dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:srcCompat="@drawable/ic_location_off_white_24dp" />
+
+                        </RelativeLayout>
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rl2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin10"
+                            android:text="Incomplete Trips" />
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:id="@+id/tv_count_income"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="86dp"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:background="@drawable/bg_view_new"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size12sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </com.blure.complexview.ComplexView>
+            </com.blure.complexview.ComplexView>
+        </LinearLayout>
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+            android:id="@+id/my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ln1"
+            android:layout_marginLeft="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin44"
+            android:text="MY PREFERENCES"
+            android:textColor="@color/black_505"
+            android:textSize="@dimen/size18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ln2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my"
+            android:layout_marginTop="@dimen/margin20"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.blure.complexview.ComplexView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                app:radius="12dp"
+                app:shadow="true"
+                app:shadowColor="#E0E0E0"
+                app:shadowSpread="1">
+
+                <com.blure.complexview.ComplexView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:color="#FFFFFF"
+                    app:radius="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/btn_acc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="@dimen/margin51"
+                            android:layout_marginRight="@dimen/margin51"
+                            android:background="@drawable/bg_black_8dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:srcCompat="@drawable/ic_person_white_24dp" />
+                        </RelativeLayout>
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin10"
+                            android:text="Account" />
+                    </LinearLayout>
+                </com.blure.complexview.ComplexView>
+            </com.blure.complexview.ComplexView>
+
+            <com.blure.complexview.ComplexView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin35"
+                android:layout_marginBottom="2dp"
+                android:visibility="visible"
+                app:radius="12dp"
+                app:shadow="true"
+                app:shadowColor="#E0E0E0"
+                app:shadowSpread="1">
+
+                <com.blure.complexview.ComplexView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:color="#FFFFFF"
+                    app:radius="12dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/btn_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="@dimen/margin51"
+                            android:layout_marginRight="@dimen/margin51"
+                            android:background="@drawable/bg_black_8dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:srcCompat="@drawable/ic_insert_chart_white_24dp" />
+                        </RelativeLayout>
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin10"
+                            android:text="@string/Scorecard" />
+                    </LinearLayout>
+                </com.blure.complexview.ComplexView>
+            </com.blure.complexview.ComplexView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

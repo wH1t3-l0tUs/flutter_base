@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin8"
+                android:layout_marginTop="@dimen/margin38"
+                android:background="@drawable/bg_grey_circle_select"
+                android:padding="@dimen/margin10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_recy"
+                android:layout_width="@dimen/margin50"
+                android:layout_height="@dimen/margin50"
+                android:layout_marginEnd="@dimen/margin8"
+                android:background="@drawable/bg_grey_circle_select"
+                app:layout_constraintBottom_toBottomOf="@id/btn_close"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_close"
+                app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black_505"
+                android:textSize="@dimen/size16sp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_close"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_close" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/margin40"
+            android:layout_marginBottom="@dimen/margin80">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:overScrollMode="never" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_left"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/bg_btn_8_gray"
+                android:scaleType="fitXY"
+                android:padding="10dp"
+                android:src="@drawable/ic_keyboard_arrow_left_white_24dp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_right"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_btn_8_gray"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

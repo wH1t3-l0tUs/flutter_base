@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_bg" />
+
+        <io.driverdoc.testapp.ui.customview.CustomViewPagerNoSwipe
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <io.driverdoc.testapp.ui.customview.ButtonNormal
+            android:id="@+id/btn_turn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="66dp"
+            android:background="@drawable/bg_btn_radius_4dp"
+            android:text="TURN ON"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="@dimen/margin100"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_oval_blue" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_oval_gray" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin32"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_oval_gray" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/margin44"
+            android:background="@drawable/bg_grey_circle_select"
+            app:srcCompat="@drawable/ic_back" />
+
+
+        <LinearLayout
+            android:id="@+id/ln_location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="60dp"
+                    app:srcCompat="@drawable/ic_location" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Share Location"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size28sp"
+                    android:textStyle="bold" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="@dimen/margin20"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/Content_per_location"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size16sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="60dp"
+                    app:srcCompat="@drawable/ic_camera" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Camera"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size28sp"
+                    android:textStyle="bold" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin40"
+                    android:layout_marginRight="@dimen/margin20"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/Content_per_camera"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_done"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="60dp"
+                    app:srcCompat="@drawable/ic_check" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin50"
+                    android:text="Welcome!"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size28sp"
+                    android:textStyle="bold" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin40"
+                    android:layout_marginRight="@dimen/margin20"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/Content_per_all_set"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

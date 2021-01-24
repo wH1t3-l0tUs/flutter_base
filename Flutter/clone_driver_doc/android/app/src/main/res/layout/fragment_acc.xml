@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33BEAD">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin32">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_close"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="@dimen/margin8"
+                    android:background="@drawable/bg_grey_circle_select"
+                    android:padding="@dimen/margin10"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Account"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size16sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin37"
+                    android:text="@string/firstName"
+                    android:textColor="#888E96"
+                    android:textSize="@dimen/size14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_below="@id/tv1">
+
+                    <io.driverdoc.testapp.ui.customview.EditTextRegular
+                        android:id="@+id/edt_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="@drawable/ic_edt"
+                        android:digits="0123456789qwertzuiopasdfghjklyxcvbnm AQWERTYUIOPLKJHGFDSAZXCVBNM"
+                        android:inputType="textEmailAddress|textCapSentences"
+                        android:maxLength="50"
+                        android:paddingLeft="@dimen/margin10"
+                        android:paddingRight="@dimen/margin10"
+                        android:singleLine="true"
+                        android:textColor="@color/black_023"
+                        android:textSize="@dimen/size16sp"
+                        android:theme="@style/EditTextTheme"
+                        tools:ignore="MissingPrefix" />
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="#33BEAD"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin13"
+                    android:text="@string/lastName"
+                    android:textColor="#888E96"
+                    android:textSize="@dimen/size14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl1"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp">
+
+                    <io.driverdoc.testapp.ui.customview.EditTextRegular
+                        android:id="@+id/edt_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="@drawable/ic_edt"
+                        android:digits="0123456789qwertzuiopasdfghjklyxcvbnm AQWERTYUIOPLKJHGFDSAZXCVBNM"
+                        android:inputType="textEmailAddress|textCapSentences"
+                        android:maxLength="50"
+                        android:paddingLeft="@dimen/margin10"
+                        android:paddingRight="@dimen/margin10"
+                        android:singleLine="true"
+                        android:textColor="@color/black_023"
+                        android:textSize="@dimen/size16sp"
+                        android:theme="@style/EditTextTheme"
+                        tools:ignore="MissingPrefix" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="#33BEAD"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl1"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin13"
+                    android:text="@string/Phone_number"
+                    android:textColor="#888E96"
+                    android:textSize="@dimen/size14sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <io.driverdoc.testapp.ui.customview.EditTextRegular
+                        android:id="@+id/edt_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="@drawable/ic_edt"
+                        android:digits="0123456789"
+                        android:inputType="phone"
+                        android:maxLength="14"
+                        android:paddingLeft="@dimen/margin30"
+                        android:paddingRight="@dimen/margin10"
+                        android:textColor="@color/black_023"
+                        android:textSize="@dimen/size16sp"
+                        android:theme="@style/EditTextTheme"
+                        tools:ignore="MissingPrefix" />
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                        android:id="@+id/tv_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin30"
+                        android:text="+1 "
+                        android:visibility="gone"
+                        android:textColor="@color/black_023"
+                        android:textSize="@dimen/size16sp" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="#33BEAD"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl1"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin13"
+                    android:text="Email Address"
+                    android:textColor="#888E96"
+                    android:textSize="@dimen/size14sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <io.driverdoc.testapp.ui.customview.EditTextRegular
+                        android:id="@+id/edt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="@drawable/ic_edt"
+                        android:inputType="textEmailAddress"
+                        android:paddingLeft="@dimen/margin10"
+                        android:paddingRight="@dimen/margin10"
+                        android:singleLine="true"
+                        android:textColor="@color/black_023"
+                        android:textSize="@dimen/size16sp"
+                        android:theme="@style/EditTextTheme"
+                        tools:ignore="MissingPrefix" />
+
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="#33BEAD"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin13"
+                    android:text="CDL Number"
+                    android:textColor="#888E96"
+                    android:textSize="@dimen/size14sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <io.driverdoc.testapp.ui.customview.EditTextRegular
+                        android:id="@+id/edt_cdl"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="@drawable/ic_edt"
+                        android:digits="0123456789qwertzuiopasdfghjklyxcvbnmAQWERTYUIOPLKJHGFDSAZXCVBNM"
+                        android:inputType="text"
+                        android:maxLength="25"
+                        android:paddingLeft="@dimen/margin10"
+                        android:paddingRight="@dimen/margin10"
+                        android:singleLine="true"
+                        android:textColor="@color/black_023"
+                        android:textSize="@dimen/size16sp"
+                        android:theme="@style/EditTextTheme"
+                        tools:ignore="MissingPrefix" />
+
+                    <View
+                        android:id="@+id/view5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:background="#33BEAD"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin13"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:id="@+id/tv_state"
+                            android:layout_width="@dimen/margin100"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin20"
+                            android:text="State"
+                            android:textColor="#888E96"
+                            android:textSize="@dimen/size14sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/margin120"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_state">
+
+                            <Spinner
+                                android:id="@+id/edt_state"
+                                android:layout_width="100dp"
+                                android:layout_height="56dp"
+                                android:layout_marginLeft="@dimen/margin20"
+                                android:background="@drawable/ic_edt"
+                                android:paddingLeft="@dimen/margin10"
+                                android:textColor="@color/black_023"
+                                android:textSize="@dimen/size16sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/img_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/margin10"
+                                app:srcCompat="@drawable/ic_keyboard_arrow_down_gray_24dp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view6"
+                            android:layout_width="@dimen/margin100"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="@dimen/margin20"
+                            android:background="#33BEAD"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin16"
+                        android:layout_marginRight="@dimen/margin20"
+                        android:orientation="vertical">
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:id="@+id/tv7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Exp. Date"
+                            android:textColor="#888E96"
+                            android:textSize="@dimen/size14sp" />
+
+                        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                            android:id="@+id/tv_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_below="@+id/tv7"
+                            android:background="@drawable/ic_edt"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/margin10"
+                            android:paddingRight="@dimen/margin10"
+                            android:textColor="@color/black_023"
+                            android:textSize="@dimen/size16sp" />
+
+                        <View
+                            android:id="@+id/view7"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="@dimen/margin20"
+                            android:layout_marginRight="@dimen/margin20"
+                            android:background="#33BEAD"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <io.driverdoc.testapp.ui.customview.ButtonNormal
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="@dimen/margin106"
+                    android:layout_marginTop="@dimen/margin37"
+                    android:layout_marginRight="@dimen/margin106"
+                    android:layout_marginBottom="@dimen/margin36"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:background="@drawable/bg_btn_radius_4dp"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size16sp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

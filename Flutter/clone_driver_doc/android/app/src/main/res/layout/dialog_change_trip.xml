@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog10dp"
+            android:orientation="vertical">
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin32"
+                android:gravity="center"
+                android:textColor="@color/black_505"
+                android:textSize="@dimen/size16sp" />
+
+
+            <io.driverdoc.testapp.ui.customview.ButtonNormal
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginLeft="112dp"
+                android:layout_marginTop="@dimen/margin46"
+                android:layout_marginRight="112dp"
+                android:layout_marginBottom="@dimen/margin20"
+                android:background="@drawable/bg_btn_radius_4dp"
+                android:text="Ok"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

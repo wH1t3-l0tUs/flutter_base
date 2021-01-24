@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.driverdoc.testapp.ui.start.verifi.VerifiModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/margin10"
+            android:background="@drawable/bg_grey_circle_select"
+            app:srcCompat="@drawable/ic_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btn_close"
+            android:orientation="vertical">
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Verification"
+                android:textColor="@color/black_505"
+                android:textSize="28sp" />
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin24"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginRight="@dimen/margin24"
+                android:text="Enter 4 digit code we sent to (402) 123-4567"
+                android:textColor="@color/black_888"
+                android:textSize="@dimen/size16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin60"
+                android:layout_marginRight="@dimen/margin64"
+                android:orientation="horizontal">
+
+                <io.driverdoc.testapp.ui.customview.EditTextMedium
+                    android:id="@+id/edt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:gravity="center_horizontal"
+                    android:hint="-"
+                    android:digits="1234567890"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black_505"
+                    android:textColorHint="@color/black_505"
+                    android:textSize="28sp" />
+
+                <io.driverdoc.testapp.ui.customview.EditTextMedium
+                    android:id="@+id/edt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:digits="1234567890"
+                    android:enabled="true"
+                    android:gravity="center_horizontal"
+                    android:hint="-"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black_505"
+                    android:textColorHint="@color/black_505"
+                    android:textSize="28sp" />
+
+                <io.driverdoc.testapp.ui.customview.EditTextMedium
+                    android:id="@+id/edt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:digits="1234567890"
+                    android:gravity="center_horizontal"
+                    android:hint="-"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black_505"
+                    android:textColorHint="@color/black_505"
+                    android:textSize="28sp" />
+
+                <io.driverdoc.testapp.ui.customview.EditTextMedium
+                    android:id="@+id/edt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:digits="1234567890"
+                    android:gravity="center_horizontal"
+                    android:hint="-"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black_505"
+                    android:textColorHint="@color/black_505"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <io.driverdoc.testapp.ui.customview.ButtonNormal
+            android:id="@+id/btn_resend"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_white10dp"
+            android:text="Resend Code"
+            android:textAllCaps="false"
+            android:textColor="@color/black_023"
+            android:textSize="@dimen/size16sp"
+            android:visibility="visible" />
+    </RelativeLayout>
+</layout>

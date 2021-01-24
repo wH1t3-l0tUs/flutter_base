@@ -1,0 +1,17 @@
+include: package:pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    await_only_futures: true
+    avoid_print: true
+    close_sinks: false
+    unnecessary_statements: true
+    avoid_unnecessary_containers: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_is_not_operator: true
+    prefer_single_quotes: false
+    unnecessary_final: false
+    omit_local_variable_types: false
+
+

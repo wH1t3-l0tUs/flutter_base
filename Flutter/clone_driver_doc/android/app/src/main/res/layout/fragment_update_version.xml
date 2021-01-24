@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_sad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin100"
+            app:srcCompat="@drawable/ic_update_version" />
+        <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ic_sad"
+            android:layout_marginLeft="@dimen/margin43"
+            android:layout_marginTop="@dimen/margin70"
+            android:layout_marginRight="@dimen/margin39"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="New version required!"
+            android:textColor="@color/black_505"
+            android:textSize="@dimen/size28sp" />
+        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1"
+            android:layout_marginLeft="@dimen/margin43"
+            android:layout_marginTop="@dimen/margin32"
+            android:layout_marginRight="@dimen/margin43"
+            android:gravity="center"
+            android:lineSpacingExtra="5sp"
+            android:text="To ensure the app performs at its best, please download the newest version."
+            android:textColor="@color/black_505"
+            android:textSize="@dimen/size16sp" />
+
+        <io.driverdoc.testapp.ui.customview.ButtonNormal
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="66dp"
+            android:background="@drawable/bg_btn_radius_4dp"
+            android:text="UPDATE NOW"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

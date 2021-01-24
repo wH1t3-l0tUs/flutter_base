@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="green">#00B189</color>
+    <color name="grey">#E3E6E8</color>
+    <color name="indicator_not_selected">#D5D9DD</color>
+    <color name="have_acc">#73808C</color>
+    <color name="bg_survey">#F7F8F9</color>
+    <color name="female_bg">#FF665E</color>
+    <color name="progress_bar">#B6B5E9</color>
+    <color name="bg_btn_grey">#8F99A3</color>
+
+    <color name="blue">#33BEAD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#D5D9DD</color>
+    <color name="Color_edt">#33BEAD</color>
+    <color name="black">#000000</color>
+    <color name="color_text_normal">#50565E</color>
+    <color name="transfer">#00FFFFFF</color>
+    <color name="color_text_hint">#B2B8C0</color>
+    <color name="black_505">#50565E</color>
+    <color name="black_888">#888E96</color>
+    <color name="black_023">#023F62</color>
+    <color name="color_indicator_sl">#33BEAD</color>
+    <color name="color_indicator_unsl">#B2B8C0</color>
+    <color name="grey_300_77">#77E0E0E0</color>
+    <color name="bg_edt">#E3E7ED</color>
+    <color name="Color_edt_normal">#023F62</color>
+
+
+
+
+    <color name="camera_toolbar_background">#00FFFFFF</color>
+
+    <color name="camera_shooter_text_color">#FFFFFF</color>
+    <color name="camera_message_text_color">#FFFF00</color>
+    <color name="camera_message_text_background">#7F000000</color>
+    <color name="camera_overlay_frame_color">#C000FF00</color>
+    <color name="camera_overlay_alert_color">#C0FF0000</color>
+
+    <color name="crop_thumb">#7f00ddff</color>
+
+    <!-- A light Holo shade of red -->
+    <color name="holo_red_light">#ffff4444</color>
+    <!-- A dark Holo shade of blue -->
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <!-- A dark Holo shade of green -->
+    <color name="holo_green_dark">#ff99cc00</color>
+    <!-- A really bright Holo shade of blue -->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <!-- A really bright Holo shade of green -->
+    <color name="holo_green_bright">#ffddff00</color>
+    <color name="primary_grey_300">#E0E0E0</color>
+    <color name="primary_grey_400">#BDBDBD</color>
+    <color name="primary_grey_700">#616161</color>
+    <color name="accent_indigo_500">#3F51B5</color>
+    <color name="color_line">#F2F2F2</color>
+    <color name="red">#FF212C</color>
+
+
+    <color name="black_picker">#333333</color>
+</resources>

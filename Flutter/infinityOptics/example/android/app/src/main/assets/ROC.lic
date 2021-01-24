@@ -1,0 +1,26 @@
+{
+  "vendor": "Rank One Computing",
+  "license": {
+    "product": "ROC SDK",
+    "version": "1.23",
+    "expiry": "2020-11-28",
+    "hostid": [
+      "b185819921ef82b865af878779c6aa99c868952f6768ff7b416e2098e6418322",
+      "7a61a7b86073b53fe2ceef96074ba23876e7b30c859c40c5d4d648b9391efe22"
+    ],
+    "salt": "bb2f83d8135d2703549c46e2defd812ff978e03e0bd3289a1d8917631d6a507b",
+    "os": "Android",
+    "customer": "Infinity Optics Solutions",
+    "userdata": {
+            "account": "RankOne",
+            "analytics_only": false,
+            "explore": true,
+            "grade": "evaluation",
+            "hostid": "[8c52070f7fd9659a, 2c:0e:3d:ee:14:50]",
+            "logging": false,
+            "templates": 1000000,
+            "threads": 8
+        },
+    "signature": "3041021e31299f107e4b45740c3ec286e1ca9b0d90a955fc4454b01cc5f5337d5522021f0084d8dbb8461b8cb1bb7dbd5ffddcd7f1fd44a85cf8a7256e60a548c8a290"
+  }
+}

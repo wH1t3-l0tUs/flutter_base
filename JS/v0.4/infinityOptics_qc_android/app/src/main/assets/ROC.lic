@@ -1,0 +1,31 @@
+{
+  "vendor": "Rank One Computing",
+  "license": {
+    "product": "ROC SDK",
+    "version": "1.24",
+    "expiry": "2021-01-03",
+    "hostid": [
+      "2fab043a0b1cbb4bdbf5ea15a7572eb1e6024b8d4841638509c0b64fce3a95f1",
+      "83d7989c497792cae8472683f6c9e7de5b22708376eff5a5297add8fb9d4951b",
+      "38ed7622e4c799f71b3c2cf03e1252960c8d37b6505fddf81d1485c46ee239d1",
+      "140dff1bfa6c7198a86da1b11f8fb3b6f8bd60506efd5897783f6f36f9c20ced",
+      "d2460c30fb5084b0dec3b856add76ed4e98a5505234a419c7d068f9d5f4ccd55",
+      "461d81f1a7efb4709fe2875c757fe87c6adc777516e7ace54823f4cc033795c1",
+      "eeeb7129a5658401e39ed2a8cefaf73a069fa2248df8acc0d6ffceb4f94969e3"
+    ],
+    "salt": "dc7a388a4d2f5a0a2c2bd70a4f9f35d7447ed5329ab3c67c3c2681ef77b0a86b",
+    "os": "Android",
+    "customer": "Infinity Optics Solutions",
+    "userdata": {
+            "account": "RankOne",
+            "analytics_only": false,
+            "explore": true,
+            "grade": "evaluation",
+            "hostid": "[286c17e31ab2143e, f6:e9:73:d0:df:6b, d2:d9:93:4e:b0:e0, 8c52070f7fd9659a, 2c:0e:3d:ee:14:50, 5f1f2ae5c29f4da6, ea:d2:16:15:ae:79]",
+            "logging": false,
+            "templates": 1000000,
+            "threads": 8
+        },
+    "signature": "3041021f00b92fd63a229481ae67528192530b2bb98c1223ac26fc286b55e72e251a9c021e6b4ca9afa41a9d5d941060726e83bff5e7c9849d178ae288efac0f03ba5d"
+  }
+}

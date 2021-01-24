@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_header" />
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin32"
+            android:text="@string/Active_trip"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1"
+            android:layout_marginLeft="@dimen/margin20"
+            android:text="123445"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin38"
+            android:layout_marginRight="@dimen/margin20"
+            app:srcCompat="@drawable/ic_dashboard" />
+
+
+        <LinearLayout
+            android:id="@+id/ln1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img1"
+            android:layout_marginTop="@dimen/margin20"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin8"
+                app:srcCompat="@drawable/ic_oval_blue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin8"
+                android:layout_marginRight="@dimen/margin8"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin24"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:text="Arrival"
+                    android:textColor="@color/black_888"
+                    android:textSize="12sp" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin24"
+                    android:layout_marginBottom="@dimen/margin17"
+                    android:text="ON TIME"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ln1"
+            android:layout_marginTop="@dimen/margin20"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin8"
+                app:srcCompat="@drawable/ic_oval_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin8"
+                android:layout_marginRight="@dimen/margin8"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin24"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:text="Document"
+                    android:textColor="@color/black_888"
+                    android:textSize="12sp" />
+
+                <io.driverdoc.testapp.ui.customview.ButtonNormal
+                    android:id="@+id/btn_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="59dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="59dp"
+                    android:layout_marginBottom="19dp"
+                    android:background="@drawable/bg_btn_black26"
+                    android:text="CAPTURE DOCUMENT"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size16sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

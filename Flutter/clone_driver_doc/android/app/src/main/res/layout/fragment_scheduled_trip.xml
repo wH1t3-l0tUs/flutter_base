@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33BEAD">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/margin8"
+                android:layout_marginTop="@dimen/margin32"
+                android:background="@drawable/bg_grey_circle_select"
+                android:padding="@dimen/margin10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Scheduled Trips"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16sp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_close"
+                app:layout_constraintTop_toTopOf="@id/btn_close" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="@dimen/margin32">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:overScrollMode="never">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                        android:id="@+id/tv_no_trip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="No Trip"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size16sp"
+                        android:visibility="gone" />
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+                        android:id="@+id/tv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:text="ACTIVE TRIP"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rc_active"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv2"
+                        android:layout_marginTop="@dimen/margin20"
+                        android:layout_marginBottom="2dp"
+                        android:layoutAnimation="@anim/layout_animation_fall_down" />
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+                        android:id="@+id/tv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rc_active"
+                        android:layout_marginLeft="@dimen/margin20"
+                        android:layout_marginTop="@dimen/margin30"
+                        android:text="SCHEDULED TRIP(S)"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rc_schedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv3"
+                        android:layout_marginTop="@dimen/margin20"
+                        android:layout_marginBottom="2dp"
+                        android:layoutAnimation="@anim/layout_animation_fall_down" />
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+</layout>

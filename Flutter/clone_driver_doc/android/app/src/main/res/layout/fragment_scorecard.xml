@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33BEAD"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin32"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_close"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="@dimen/margin8"
+                    android:background="@drawable/bg_grey_circle_select"
+                    android:padding="@dimen/margin10"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Scorecard"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size16sp" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+            android:id="@+id/tv_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin32"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black_505"
+            android:textSize="@dimen/size28sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+        <com.blure.complexview.ComplexView
+            android:id="@+id/cv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="@dimen/margin8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_count"
+            app:radius="2dp"
+            app:shadow="true"
+            app:shadowColor="#E0E0E0"
+            app:shadowSpread="1">
+
+            <com.blure.complexview.ComplexView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:color="#FFFFFF"
+                app:radius="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="@dimen/margin22"
+                        android:layout_marginBottom="@dimen/margin22"
+                        android:text="On Time Performance"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                        android:id="@+id/tv_on_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginEnd="@dimen/margin20"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tv1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.blure.complexview.ComplexView>
+        </com.blure.complexview.ComplexView>
+
+        <com.blure.complexview.ComplexView
+            android:id="@+id/cv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margin8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv1"
+            app:radius="2dp"
+            app:shadow="true"
+            app:shadowColor="#E0E0E0"
+            app:shadowSpread="1">
+
+            <com.blure.complexview.ComplexView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:color="#FFFFFF"
+                app:radius="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="@dimen/margin22"
+                        android:layout_marginBottom="@dimen/margin22"
+                        android:text="Document Captured"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                        android:id="@+id/tv_document"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginEnd="@dimen/margin20"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tv2"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.blure.complexview.ComplexView>
+        </com.blure.complexview.ComplexView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.driverdoc.testapp.ui.main.tripsactive.TripModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transfer">
+
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33BEAD">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/c2"
+                android:layout_width="@dimen/_96sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Active_trip"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv1"
+                    android:layout_marginBottom="7dp"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/NA"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_96sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_toStartOf="@+id/btn_dashboard"
+                android:layout_toEndOf="@+id/c2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv_refer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reference"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv_content_refer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:ellipsize="start"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/NA"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_refer1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_refer1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_dashboard"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/c2"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin10"
+                android:layout_marginBottom="@dimen/margin6"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="10dp"
+                app:srcCompat="@drawable/ic_apps_white_24dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/head"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:id="@+id/fl_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rc_view"
+                android:visibility="visible">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin8"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin8"
+                android:background="@color/transfer"
+                android:overScrollMode="never"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/rl2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true"
+            android:layout_above="@id/btn_done"
+            android:layout_below="@+id/head"
+            android:overScrollMode="never"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/ln1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin20"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin8"
+                        app:srcCompat="@drawable/ic_oval_blue" />
+
+                    <com.blure.complexview.ComplexView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        app:radius="12dp"
+                        app:shadow="true"
+                        app:shadowColor="#E0E0E0"
+                        app:shadowSpread="1">
+
+                        <com.blure.complexview.ComplexView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:color="#FFFFFF"
+                            app:radius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin8"
+                                android:layout_marginRight="@dimen/margin8"
+                                android:background="@color/white"
+                                android:orientation="vertical">
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin24"
+                                    android:layout_marginTop="@dimen/margin10"
+                                    android:text="Arrival"
+                                    android:textColor="@color/black_888"
+                                    android:textSize="12sp" />
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                                    android:id="@+id/tv_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin24"
+                                    android:layout_marginBottom="@dimen/margin17"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size18sp" />
+                            </LinearLayout>
+                        </com.blure.complexview.ComplexView>
+                    </com.blure.complexview.ComplexView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ln1"
+                    android:layout_marginTop="@dimen/margin20"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin8"
+                        app:srcCompat="@drawable/ic_oval_gray" />
+
+                    <com.blure.complexview.ComplexView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        app:radius="12dp"
+                        app:shadow="true"
+                        app:shadowColor="#E0E0E0"
+                        app:shadowSpread="1">
+
+                        <com.blure.complexview.ComplexView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:color="#FFFFFF"
+                            app:radius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin8"
+                                android:layout_marginRight="@dimen/margin8"
+                                android:background="@color/white"
+                                android:orientation="vertical">
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin24"
+                                    android:layout_marginTop="@dimen/margin10"
+                                    android:text="Document"
+                                    android:textColor="@color/black_888"
+                                    android:textSize="14sp" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin18">
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_puchase"
+                                        android:layout_width="@dimen/_112sdp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="@dimen/margin24"
+                                        android:text="Purchase Order #"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp" />
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_content_puchase"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="@dimen/margin24"
+                                        android:layout_marginEnd="@dimen/margin24"
+                                        android:layout_toEndOf="@+id/tv_puchase"
+                                        android:ellipsize="start"
+                                        android:gravity="end"
+                                        android:singleLine="true"
+                                        android:text="@string/NA"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin7">
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_bol"
+                                        android:layout_width="@dimen/_112sdp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="@dimen/margin24"
+                                        android:text="BOL #"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp" />
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_content_bol"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="@dimen/margin24"
+                                        android:layout_marginEnd="@dimen/margin24"
+                                        android:layout_toEndOf="@+id/tv_bol"
+                                        android:ellipsize="start"
+                                        android:gravity="end"
+                                        android:singleLine="true"
+                                        android:text="@string/NA"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin7"
+                                    android:layout_marginBottom="@dimen/margin7">
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_app"
+                                        android:layout_width="@dimen/_112sdp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="@dimen/margin24"
+                                        android:text="Appointment #"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp" />
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_content_app"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="@dimen/margin24"
+                                        android:layout_marginEnd="@dimen/margin24"
+                                        android:layout_toEndOf="@+id/tv_app"
+                                        android:ellipsize="start"
+                                        android:gravity="end"
+                                        android:singleLine="true"
+                                        android:text="@string/NA"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_note"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:layout_marginTop="@dimen/margin8"
+                                    android:layout_marginEnd="200dp"
+                                    android:text="Note:"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp" />
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_content_note"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:layout_marginTop="@dimen/margin2"
+                                    android:layout_marginEnd="24dp"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp" />
+
+                                <RelativeLayout
+                                    android:id="@+id/btn_document"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin24"
+                                    android:layout_marginTop="26dp"
+                                    android:layout_marginRight="@dimen/margin24"
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/img3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin20"
+                                        android:layout_marginBottom="@dimen/margin20"
+                                        app:srcCompat="@drawable/ic_document" />
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_bill"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@id/img3"
+                                        android:textColor="@color/black_505"
+                                        android:textSize="@dimen/size16sp" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/img4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/margin21"
+                                        app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+                                    <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                        android:id="@+id/tv_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/margin8"
+                                        android:layout_toLeftOf="@id/img4"
+                                        android:text="0 page(s)"
+                                        android:textColor="#B2B8C0"
+                                        android:textSize="@dimen/size14sp" />
+                                </RelativeLayout>
+
+                                <io.driverdoc.testapp.ui.customview.ButtonNormal
+                                    android:id="@+id/btn_create"
+                                    style="?android:attr/borderlessButtonStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginLeft="24dp"
+                                    android:layout_marginTop="26dp"
+                                    android:layout_marginRight="24dp"
+                                    android:layout_marginBottom="19dp"
+                                    android:background="@drawable/bg_btn_radius_4dp"
+                                    android:text="CAPTURE DOCUMENT"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/size16sp"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+                        </com.blure.complexview.ComplexView>
+                    </com.blure.complexview.ComplexView>
+                </LinearLayout>
+
+<!--                <io.driverdoc.testapp.ui.customview.ButtonNormal-->
+<!--                    android:id="@+id/btn_complete_trip"-->
+<!--                    style="?android:attr/borderlessButtonStyle"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_marginLeft="24dp"-->
+<!--                    android:layout_marginRight="24dp"-->
+<!--                    android:layout_marginBottom="21dp"-->
+<!--                    android:background="@drawable/bg_btn_radius_4dp"-->
+<!--                    android:text="COMPLETE TRIP"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/size16sp"-->
+<!--                    android:visibility="gone" />-->
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/rl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/head"
+            android:overScrollMode="never"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin32">
+
+
+                <com.blure.complexview.ComplexView
+                    android:id="@+id/cv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:radius="12dp"
+                    app:shadow="true"
+                    app:shadowColor="#E0E0E0"
+                    app:shadowSpread="1">
+
+                    <com.blure.complexview.ComplexView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:color="#FFFFFF"
+                        app:radius="12dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/margin28">
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_trip_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin20"
+                                android:layout_marginTop="@dimen/margin20"
+                                android:background="@drawable/bg_btn_blue_10"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:paddingLeft="@dimen/margin14"
+                                android:paddingTop="2dp"
+                                android:paddingRight="@dimen/margin14"
+                                android:paddingBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size14sp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/img2"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_below="@id/tv_trip_type"
+                                android:layout_marginStart="@dimen/margin22"
+                                android:layout_marginTop="@dimen/margin20"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_trip_type"
+                                app:srcCompat="@drawable/ic_place_black_24dp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/img"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_below="@id/tv_addr"
+                                android:layout_marginStart="@dimen/margin22"
+                                android:layout_marginTop="19dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_addr"
+                                app:srcCompat="@drawable/ic_watch_later_black_24dp" />
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_name_addr"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:maxLines="3"
+                                android:textColor="@color/black_505"
+                                android:textSize="@dimen/size16sp"
+                                app:layout_constraintBottom_toBottomOf="@id/img2"
+                                app:layout_constraintLeft_toRightOf="@id/img2"
+                                app:layout_constraintTop_toTopOf="@id/img2" />
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_addr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin10"
+                                android:layout_marginTop="3dp"
+                                android:maxLines="3"
+                                android:paddingRight="@dimen/margin150"
+                                android:textColor="@color/color_text_hint"
+                                android:textSize="@dimen/size16sp"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintLeft_toRightOf="@id/img2"
+                                app:layout_constraintTop_toBottomOf="@id/tv_name_addr" />
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_addr"
+                                android:layout_marginStart="@dimen/margin10"
+                                android:layout_marginEnd="@dimen/margin40"
+                                android:textColor="@color/black_505"
+                                android:textSize="@dimen/size16sp"
+                                app:layout_constraintBottom_toBottomOf="@id/img"
+                                app:layout_constraintLeft_toRightOf="@id/img"
+                                app:layout_constraintTop_toTopOf="@id/img" />
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_time_late"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_addr"
+                                android:layout_marginStart="@dimen/margin10"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginEnd="@dimen/margin40"
+                                android:textColor="@color/black_505"
+                                android:textSize="@dimen/size16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+                            <RelativeLayout
+                                android:id="@+id/btn_map"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/margin14"
+                                android:background="@drawable/bg_circle"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    app:srcCompat="@drawable/ic_directions_white_24dp" />
+                            </RelativeLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.blure.complexview.ComplexView>
+                </com.blure.complexview.ComplexView>
+
+                <com.blure.complexview.ComplexView
+                    android:id="@+id/cv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_1"
+                    app:radius="12dp"
+                    app:shadow="true"
+                    app:shadowColor="#E0E0E0"
+                    app:shadowSpread="1">
+
+                    <com.blure.complexview.ComplexView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:color="#FFFFFF"
+                        app:radius="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ln1"
+                            android:layout_marginBottom="@dimen/margin20"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin24"
+                                android:layout_marginTop="@dimen/margin10"
+                                android:text="Document"
+                                android:textColor="@color/black_888"
+                                android:textSize="14sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin18">
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_puchase1"
+                                    android:layout_width="@dimen/_112sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:text="Purchase Order #"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp" />
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_content_puchase1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:layout_marginEnd="@dimen/margin24"
+                                    android:layout_toEndOf="@+id/tv_puchase1"
+                                    android:ellipsize="start"
+                                    android:gravity="end"
+                                    android:singleLine="true"
+                                    android:text="@string/NA"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin7">
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_bol1"
+                                    android:layout_width="@dimen/_112sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:text="BOL #"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp" />
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_content_bol1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:layout_marginEnd="@dimen/margin24"
+                                    android:layout_toEndOf="@+id/tv_bol1"
+                                    android:ellipsize="start"
+                                    android:gravity="end"
+                                    android:singleLine="true"
+                                    android:text="@string/NA"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin7">
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_app1"
+                                    android:layout_width="@dimen/_112sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:text="Appointment #"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp" />
+
+                                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                    android:id="@+id/tv_content_app1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="@dimen/margin24"
+                                    android:layout_marginEnd="@dimen/margin24"
+                                    android:layout_toEndOf="@+id/tv_app1"
+                                    android:ellipsize="start"
+                                    android:gravity="end"
+                                    android:singleLine="true"
+                                    android:text="@string/NA"
+                                    android:textColor="@color/black_505"
+                                    android:textSize="@dimen/size16sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_note1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin24"
+                                android:layout_marginTop="@dimen/margin15"
+                                android:layout_marginEnd="200dp"
+                                android:text="Note:"
+                                android:textColor="@color/black_505"
+                                android:textSize="@dimen/size16sp" />
+
+                            <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                                android:id="@+id/tv_content_note1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin24"
+                                android:layout_marginTop="@dimen/margin2"
+                                android:layout_marginEnd="24dp"
+                                android:textColor="@color/black_505"
+                                android:textSize="@dimen/size16sp" />
+                        </LinearLayout>
+                    </com.blure.complexview.ComplexView>
+                </com.blure.complexview.ComplexView>
+
+                <RelativeLayout
+                    android:id="@+id/btnHere"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="24dp"
+                    android:visibility="visible"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_btn_line_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_2">
+
+                    <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                        android:id="@+id/button_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="HERE"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black_505"
+                        android:textSize="@dimen/size18sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/margin16"
+                        android:layout_toStartOf="@id/button_text"
+                        android:src="@drawable/ic_shape_black" />
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <io.driverdoc.testapp.ui.customview.ButtonNormal
+            android:id="@+id/btn_done"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="46dp"
+            android:background="@drawable/bg_btn_radius_4dp"
+            android:text="COMPLETE TRIP"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16sp"
+            android:visibility="gone" />
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+            android:id="@+id/tv_warning"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="Please don’t use the app while driving. Drive safe!"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

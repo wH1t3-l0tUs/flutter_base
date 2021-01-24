@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.driverdoc.testapp.ui.start.started.StartedModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="match_parent"
+            android:layout_height="168.73dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/margin38"
+            android:layout_marginRight="@dimen/margin37"
+            android:layout_marginBottom="420dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_logo"
+                android:layout_width="match_parent"
+                android:layout_height="168.73dp"
+                app:srcCompat="@drawable/logo" />
+        </RelativeLayout>
+
+        <io.driverdoc.testapp.ui.customview.TextViewLatoBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rl1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Get Started"
+            android:textStyle="bold"
+            android:textColor="@color/black_505"
+            android:textSize="28sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/margin20"
+            android:layout_marginRight="@dimen/margin20"
+            android:layout_marginBottom="@dimen/margin36"
+            android:background="@drawable/bg_edt_select"
+            android:orientation="horizontal">
+
+
+            <io.driverdoc.testapp.ui.customview.EditTextRegular
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin64"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/btn_fla"
+                android:background="@null"
+                android:digits="0123456789"
+                android:hint="Enter mobile phone number"
+                android:inputType="phone"
+                android:lines="1"
+                android:maxLength="14"
+                android:textColor="@color/color_text_normal"
+                android:textColorHint="@color/color_text_hint"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/btn_fla"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img"
+                    android:layout_width="28dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_us" />
+
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="+1"
+                    android:textColor="#50565E"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <io.driverdoc.testapp.ui.customview.ButtonNormal
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_radius_4dp"
+            android:text="Send code"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_15dp">
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin15">
+                <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin46"
+                    android:layout_marginRight="8dp"
+                    android:maxLines="2"
+                    android:textColor="@color/black_505"
+                    android:textSize="@dimen/size20sp" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img2"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin20"
+                    app:srcCompat="@drawable/ic_place_black_24dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl1">
+                <io.driverdoc.testapp.ui.customview.TextViewLatoRegularBoldNormal
+                    android:id="@+id/tv_addr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin46"
+                    android:layout_marginRight="@dimen/margin150"
+                    android:layout_marginBottom="@dimen/margin14"
+                    android:maxLines="3"
+                    android:textColor="#B2B8C0"
+                    android:textSize="@dimen/size16sp" />
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/clock"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_below="@id/rl"
+                android:layout_marginLeft="@dimen/margin22"
+                android:layout_marginTop="@dimen/margin28"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_watch_later_black_24dp" />
+            <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl"
+                android:layout_marginLeft="@dimen/margin11"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_toRightOf="@id/clock"
+                android:textColor="@color/black_505"
+                android:textSize="@dimen/size18sp"
+                android:visibility="gone" />
+            <io.driverdoc.testapp.ui.customview.TextViewLatoMedium
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_day"
+                android:layout_marginLeft="@dimen/margin46"
+                android:layout_marginBottom="@dimen/margin24"
+                android:textColor="@color/black_505"
+                android:textSize="@dimen/size19sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_map"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin14">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_clear_black_24dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
